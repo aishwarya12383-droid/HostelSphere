@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>HostelSphere | Complaints</title>
+
+<link rel="stylesheet"
+href="css/complaint.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+
+<div class="header">
+
+<h1>
+
+📩 Complaint Portal
+
+</h1>
+
+
+<p>
+
+Help us improve your hostel experience
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="complaint-card">
+
+
+<h2>
+
+Submit Complaint
+
+</h2>
+
+
+
+<input
+id="title"
+type="text"
+placeholder="Complaint Title">
+
+
+
+<select id="category">
+
+<option>Food</option>
+
+<option>WiFi</option>
+
+<option>Water</option>
+
+<option>Electricity</option>
+
+<option>Cleanliness</option>
+
+<option>Other</option>
+
+</select>
+
+
+
+
+
+<select id="priority">
+
+<option>Low</option>
+
+<option>Medium</option>
+
+<option>High</option>
+
+</select>
+
+
+
+
+
+<textarea
+
+id="description"
+
+placeholder="Describe your issue">
+
+</textarea>
+
+
+
+
+
+<button onclick="submitComplaint()">
+
+Submit Complaint
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="history-card">
+
+
+<h2>
+
+Complaint History
+
+</h2>
+
+
+
+<div id="history">
+
+
+
+<p>
+
+No complaints submitted.
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script src="js/complaint.js"></script>
+
+</body>
+
+</html>

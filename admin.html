@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>HostelSphere | Admin Dashboard</title>
+
+<link rel="stylesheet"
+href="css/admin.css">
+
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+
+<div class="sidebar">
+
+
+<h2>
+
+🏠 HostelSphere
+
+</h2>
+
+
+
+<ul>
+
+<li class="active"
+onclick="window.location.href='admin.html'">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</li>
+
+
+
+<li onclick="window.location.href='students.html'">
+
+<i class="fa-solid fa-users"></i>
+
+Students
+
+</li>
+
+
+
+<li onclick="window.location.href='meal.html'">
+
+<i class="fa-solid fa-utensils"></i>
+
+Meals
+
+</li>
+
+
+
+<li onclick="window.location.href='complaint.html'">
+
+<i class="fa-solid fa-envelope"></i>
+
+Complaints
+
+</li>
+
+
+
+<li onclick="window.location.href='notice.html'">
+
+<i class="fa-solid fa-bullhorn"></i>
+
+Notices
+
+</li>
+
+
+
+<li onclick="window.location.href='analytics.html'">
+
+<i class="fa-solid fa-chart-simple"></i>
+
+Analytics
+
+</li>
+
+
+
+<li onclick="logout()">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</li>
+
+</ul>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="main">
+
+
+
+<div class="topbar">
+
+
+<h1>
+
+Admin Dashboard 👨🏻‍💼
+
+</h1>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+
+<h3>
+
+👨🏻‍🎓 Students
+
+</h3>
+
+
+<h1 id="students">
+
+0
+
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+
+🍽 Meals
+
+</h3>
+
+
+<h1 id="meals">
+
+0
+
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+
+📩 Complaints
+
+</h3>
+
+
+<h1 id="complaints">
+
+0
+
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<h3>
+
+🌱 Food Saved
+
+</h3>
+
+
+<h1 id="saved">
+
+18 KG
+
+</h1>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="recent">
+
+
+<h2>
+
+Recent Activities
+
+</h2>
+
+
+
+<div id="activities">
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>
