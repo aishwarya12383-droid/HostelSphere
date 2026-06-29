@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -8,7 +9,6 @@
 <link rel="stylesheet"
 href="css/admin.css">
 
-
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -16,18 +16,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 <body>
 
-
-
 <div class="sidebar">
-
 
 <h2>
 
 🏠 HostelSphere
 
 </h2>
-
-
 
 <ul>
 
@@ -40,8 +35,6 @@ Dashboard
 
 </li>
 
-
-
 <li onclick="window.location.href='students.html'">
 
 <i class="fa-solid fa-users"></i>
@@ -50,38 +43,6 @@ Students
 
 </li>
 
-
-
-<li onclick="window.location.href='meal.html'">
-
-<i class="fa-solid fa-utensils"></i>
-
-Meals
-
-</li>
-
-
-
-<li onclick="window.location.href='complaint.html'">
-
-<i class="fa-solid fa-envelope"></i>
-
-Complaints
-
-</li>
-
-
-
-<li onclick="window.location.href='notice.html'">
-
-<i class="fa-solid fa-bullhorn"></i>
-
-Notices
-
-</li>
-
-
-
 <li onclick="window.location.href='analytics.html'">
 
 <i class="fa-solid fa-chart-simple"></i>
@@ -89,8 +50,6 @@ Notices
 Analytics
 
 </li>
-
-
 
 <li onclick="logout()">
 
@@ -102,43 +61,25 @@ Logout
 
 </ul>
 
-
-
 </div>
-
-
-
-
-
 
 <div class="main">
 
-
-
 <div class="topbar">
 
+<div>
 
-<h1>
+<h1>👨🏻‍💼 Admin Dashboard</h1>
 
-Admin Dashboard 👨🏻‍💼
-
-</h1>
-
-
+<p id="currentDate"></p>
 
 </div>
 
-
-
-
-
+</div>
 
 <div class="cards">
 
-
-
 <div class="card">
-
 
 <h3>
 
@@ -146,30 +87,21 @@ Admin Dashboard 👨🏻‍💼
 
 </h3>
 
-
 <h1 id="students">
 
 0
 
 </h1>
 
-
 </div>
-
-
-
-
-
 
 <div class="card">
 
-
 <h3>
 
-🍽 Meals
+🍽 Meal Bookings
 
 </h3>
-
 
 <h1 id="meals">
 
@@ -177,16 +109,9 @@ Admin Dashboard 👨🏻‍💼
 
 </h1>
 
-
 </div>
 
-
-
-
-
-
 <div class="card">
-
 
 <h3>
 
@@ -194,23 +119,15 @@ Admin Dashboard 👨🏻‍💼
 
 </h3>
 
-
 <h1 id="complaints">
 
 0
 
 </h1>
 
-
 </div>
 
-
-
-
-
-
 <div class="card">
-
 
 <h3>
 
@@ -218,52 +135,99 @@ Admin Dashboard 👨🏻‍💼
 
 </h3>
 
-
 <h1 id="saved">
 
-18 KG
+0 KG
 
 </h1>
 
-
 </div>
 
-
-
 </div>
-
-
-
-
-
 
 <div class="recent">
 
-
 <h2>
 
-Recent Activities
+🍽 Today's Meal Bookings
 
 </h2>
 
+<p>
 
+Breakfast : <span id="breakfastCount">
 
-<div id="activities">
+0
 
+</span>
+
+Students
+
+</p>
+
+<p>
+
+Lunch : <span id="lunchCount">
+
+0
+
+</span>
+
+Students
+
+</p>
+
+<p>
+
+Dinner : <span id="dinnerCount">
+
+0
+
+</span>
+
+Students
+
+</p>
 
 </div>
 
+<div class="recent">
 
+<h2>
+
+📩 Student Complaints
+
+</h2>
+
+<div id="complaintList">
+
+<p>
+
+No complaints submitted.
+
+</p>
 
 </div>
 
-
-
-
+</div>
 
 </div>
 
+<div class="recent">
 
+<h2>
+
+📢 Recent Notices
+
+</h2>
+
+<div id="noticeList">
+
+<p>No notices available.</p>
+
+</div>
+
+</div>
 
 <script src="js/admin.js"></script>
 

@@ -1,126 +1,73 @@
 loadStudents();
 
-
-
 function loadStudents(){
 
+const studentsContainer =
+document.getElementById("students");
 
-const students=
-document.getElementById(
+studentsContainer.innerHTML = "";
 
-"students"
+const user =
+JSON.parse(localStorage.getItem("user"));
 
-);
+if(!user){
 
+studentsContainer.innerHTML = `
 
+<div class="card">
+<h2>No Students Found</h2>
+<p>No registered students available.</p>
+</div>
+`;
 
-const user=
-JSON.parse(
+return;
 
-localStorage.getItem(
+}
 
-"user"
-
-)
-
-);
-
-
-
-if(user){
-
-
-students.innerHTML=`
+studentsContainer.innerHTML = `
 
 <div class="card">
 
+<h2>👤 ${user.name}</h2>
 
-<h3>
+<p><strong>📧 Email :</strong> ${user.email}</p>
 
-${user.name}
+<p><strong>🏫 Department :</strong> ${user.department}</p>
 
-</h3>
+<p><strong>🎓 Year :</strong> ${user.year}</p>
 
-
-
-<p>
-
-${user.email}
-
-</p>
-
-
-
-<p>
-
-${user.department}
-
-</p>
-
-
-
-<p>
-
-${user.year}
-
-</p>
-
+<p><strong>📱 Phone :</strong> ${user.phone}</p>
 
 </div>
-
 
 `;
 
 }
 
-
-}
-
-
-
-
 function searchStudent(){
 
+const text =
+document.getElementById("search")
+.value
+.toLowerCase();
 
-const text=
-document.getElementById(
-
-"search"
-
-).value.toLowerCase();
-
-
-
-const cards=
-document.querySelectorAll(
-
-".card"
-
-);
-
-
+const cards =
+document.querySelectorAll(".card");
 
 cards.forEach(card=>{
 
+if(card.innerText.toLowerCase().includes(text)){
 
-card.style.display=
+card.style.display="block";
 
+}
 
-card.innerText.toLowerCase()
+else{
 
-.includes(text)
+card.style.display="none";
 
-?
-
-"block"
-
-:
-
-"none";
-
-
+}
 
 });
-
 
 }

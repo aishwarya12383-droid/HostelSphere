@@ -4,27 +4,21 @@ document.getElementById("togglePassword");
 const password =
 document.getElementById("password");
 
-
-
 togglePassword.addEventListener(
 
 "click",
 
 ()=>{
 
-
 if(password.type==="password"){
-
 
 password.type="text";
 
-
 togglePassword.classList.remove(
 
 "fa-eye"
 
 );
-
 
 togglePassword.classList.add(
 
@@ -32,15 +26,11 @@ togglePassword.classList.add(
 
 );
 
-
 }
-
 
 else{
 
-
 password.type="password";
-
 
 togglePassword.classList.remove(
 
@@ -48,24 +38,17 @@ togglePassword.classList.remove(
 
 );
 
-
 togglePassword.classList.add(
 
 "fa-eye"
 
 );
 
-
 }
-
 
 }
 
 );
-
-
-
-
 
 const form = document.getElementById(
 
@@ -73,19 +56,13 @@ const form = document.getElementById(
 
 );
 
-
-
 form.addEventListener(
 
 "submit",
 
 (e)=>{
 
-
 e.preventDefault();
-
-
-
 
 const email = document.getElementById(
 
@@ -93,17 +70,11 @@ const email = document.getElementById(
 
 ).value;
 
-
-
 const pass = document.getElementById(
 
 "password"
 
 ).value;
-
-
-
-
 
 const user = JSON.parse(
 
@@ -115,12 +86,7 @@ localStorage.getItem(
 
 );
 
-
-
-
-
 if(!user){
-
 
 alert(
 
@@ -128,36 +94,23 @@ alert(
 
 );
 
-
 return;
-
 
 }
 
-
-
-
-
 if(
-
 
 email===user.email &&
 
 pass===user.password
 
-
 ){
-
-
 
 alert(
 
 "Login Successful 🎉"
 
 );
-
-
-
 
 sessionStorage.setItem(
 
@@ -167,22 +120,21 @@ sessionStorage.setItem(
 
 );
 
+sessionStorage.setItem(
 
+"currentUser",
 
+JSON.stringify(user)
 
+);
 
 window.location.href=
 
 "student.html";
 
-
-
 }
 
-
-
 else{
-
 
 alert(
 
@@ -190,10 +142,7 @@ alert(
 
 );
 
-
 }
-
-
 
 }
 
@@ -201,19 +150,35 @@ alert(
 
 function adminLogin(){
 
-const pass = prompt("Enter Admin Password");
+const pass = prompt(
 
-if(pass === "Hostel@123"){
+"Enter Admin Password"
 
-sessionStorage.setItem("admin","true");
+);
 
-window.location.href = "admin.html";
+if(pass==="Hostel@123"){
+
+sessionStorage.setItem(
+
+"admin",
+
+"true"
+
+);
+
+window.location.href=
+
+"admin.html";
 
 }
 
 else{
 
-alert("Incorrect Admin Password");
+alert(
+
+"Incorrect Admin Password"
+
+);
 
 }
 

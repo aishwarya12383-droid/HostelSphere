@@ -6,385 +6,213 @@ font-family:'Segoe UI',sans-serif;
 }
 
 body{
-
 display:flex;
-
 background:#0F172A;
-
+color:#fff;
 min-height:100vh;
-
-color:white;
-
+overflow:hidden;
 }
-
-
 
 /* Sidebar */
 
 .sidebar{
-
 width:260px;
-
-padding:30px;
-
-background:rgba(255,255,255,.05);
-
+background:rgba(255,255,255,0.05);
 backdrop-filter:blur(20px);
-
-box-shadow:0 0 20px rgba(0,0,0,.3);
-
+padding:30px;
+display:flex;
+flex-direction:column;
 }
-
 
 .sidebar h2{
-
-margin-bottom:50px;
-
-font-size:28px;
-
 color:#6C63FF;
-
+margin-bottom:40px;
+text-align:center;
 }
-
-
 
 .sidebar ul{
-
 list-style:none;
-
 }
-
-
 
 .sidebar li{
-
-padding:18px;
-
-margin-bottom:10px;
-
+padding:16px 20px;
+margin-bottom:12px;
 border-radius:12px;
-
 cursor:pointer;
-
 transition:.3s;
-
+font-size:16px;
 }
-
-
 
 .sidebar li:hover{
-
 background:#6C63FF;
-
 transform:translateX(5px);
-
 }
 
-
-
-.active{
-
+.sidebar li.active{
 background:#6C63FF;
-
 }
-
-
 
 .sidebar i{
-
-margin-right:15px;
-
+margin-right:12px;
 }
-
-
-
-
 
 /* Main */
 
 .main{
-
 flex:1;
-
-padding:40px;
-
+padding:35px;
+overflow-y:auto;
 }
 
+/* Top Bar */
 
-
-.welcome{
-
-margin-bottom:40px;
-
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:35px;
 }
 
-
-
-.welcome h1{
-
-font-size:40px;
-
-margin-bottom:10px;
-
+.topbar h1{
+font-size:30px;
 }
 
-
-
-.welcome p{
-
-color:#CBD5E1;
-
+.user{
+background:#6C63FF;
+padding:12px 20px;
+border-radius:30px;
+font-weight:bold;
 }
 
-
-
-
+/* Dashboard Cards */
 
 .cards{
-
-
 display:grid;
-
-
-grid-template-columns:
-
-repeat(auto-fit,minmax(220px,1fr));
-
-
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:25px;
-
-
-margin-bottom:40px;
-
-
+margin-bottom:35px;
 }
-
-
-
 
 .card{
-
-
-padding:30px;
-
-
-border-radius:20px;
-
-
-background:rgba(255,255,255,.05);
-
-
+background:rgba(255,255,255,0.05);
 backdrop-filter:blur(20px);
-
-
+padding:25px;
+border-radius:18px;
 transition:.3s;
-
-
 }
-
-
-
 
 .card:hover{
-
-
-transform:translateY(-5px);
-
-
+transform:translateY(-6px);
 background:#1E293B;
-
-
 }
-
-
-
 
 .card h3{
-
-
-margin-bottom:20px;
-
-
+margin-bottom:15px;
 color:#00D9A5;
-
-
 }
-
-
-
 
 .card h1{
-
-
-font-size:40px;
-
-
+font-size:36px;
 }
 
+/* Sections */
 
-
-
-
-.actions{
-
-
-padding:30px;
-
-
+.section{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(20px);
 border-radius:20px;
-
-
-background:rgba(255,255,255,.05);
-
-
-margin-bottom:40px;
-
-
+padding:25px;
+margin-bottom:30px;
 }
 
-
-
-
-.actions h2{
-
-
-margin-bottom:25px;
-
-
+.section h2{
+margin-bottom:20px;
+color:#00D9A5;
 }
 
-
-
+/* Quick Actions */
 
 .buttons{
-
-
-display:flex;
-
-
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
-
-
-flex-wrap:wrap;
-
-
 }
 
-
-
-
-button{
-
-
-padding:15px 30px;
-
-
+.buttons button{
+padding:16px;
 border:none;
-
-
 border-radius:12px;
-
-
-cursor:pointer;
-
-
 background:#6C63FF;
-
-
 color:white;
-
-
-font-weight:bold;
-
-
+font-size:16px;
+cursor:pointer;
 transition:.3s;
-
-
 }
 
-
-
-button:hover{
-
-
-background:#4F46E5;
-
-
+.buttons button:hover{
+background:#5848f5;
 transform:translateY(-3px);
-
-
 }
 
+/* Notice Cards */
 
-
-
-
-.recent{
-
-
-padding:30px;
-
-
-border-radius:20px;
-
-
-background:rgba(255,255,255,.05);
-
-
-}
-
-
-
-
-.recent h2{
-
-
-margin-bottom:25px;
-
-
-}
-
-
-
-.recent p{
-
-
-padding:12px;
-
-
-margin-bottom:10px;
-
-
-border-radius:10px;
-
-
+.notice{
 background:#1E293B;
-
-
+padding:18px;
+border-radius:12px;
+margin-bottom:15px;
+border-left:5px solid #6C63FF;
 }
 
+.notice h3{
+margin-bottom:8px;
+}
 
+.notice p{
+line-height:1.6;
+color:#ddd;
+}
 
-@media(max-width:900px){
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#6C63FF;
+border-radius:10px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
 
 body{
-
 flex-direction:column;
-
 }
-
 
 .sidebar{
-
 width:100%;
-
+padding:20px;
 }
 
-
 .main{
-
 padding:20px;
+}
 
+.topbar{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.buttons{
+grid-template-columns:1fr;
 }
 
 }

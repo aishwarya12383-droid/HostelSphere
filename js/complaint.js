@@ -1,30 +1,47 @@
-// Load complaints when page loads
+// Load complaints
 loadComplaints();
 
-
-
-
 // Submit Complaint
-
 function submitComplaint(){
 
+const currentUser =
+JSON.parse(
 
-const title=
-document.getElementById("title").value;
+sessionStorage.getItem(
 
+"currentUser"
 
-const category=
-document.getElementById("category").value;
+)
 
+);
 
-const priority=
-document.getElementById("priority").value;
+const title =
+document.getElementById(
 
+"title"
 
-const description=
-document.getElementById("description").value;
+).value;
 
+const category =
+document.getElementById(
 
+"category"
+
+).value;
+
+const priority =
+document.getElementById(
+
+"priority"
+
+).value;
+
+const description =
+document.getElementById(
+
+"description"
+
+).value;
 
 if(
 
@@ -44,35 +61,37 @@ return;
 
 }
 
-
-
-
 const complaint={
 
+student:
+
+currentUser ?
+
+currentUser.name :
+
+"Student",
 
 title,
 
-
 category,
-
 
 priority,
 
-
 description,
-
 
 status:"Pending",
 
+date:
 
-date:new Date().toLocaleString()
+new Date()
 
+.toLocaleString()
 
 };
 
+let complaints=
 
-
-let complaints=JSON.parse(
+JSON.parse(
 
 localStorage.getItem(
 
@@ -82,17 +101,11 @@ localStorage.getItem(
 
 )||[];
 
-
-
-
 complaints.push(
 
 complaint
 
 );
-
-
-
 
 localStorage.setItem(
 
@@ -106,17 +119,11 @@ complaints
 
 );
 
-
-
-
 alert(
 
 "Complaint Submitted Successfully 🎉"
 
 );
-
-
-
 
 document.getElementById(
 
@@ -124,33 +131,19 @@ document.getElementById(
 
 ).value="";
 
-
-
 document.getElementById(
 
 "description"
 
 ).value="";
 
-
-
-
 loadComplaints();
-
-
 
 }
 
-
-
-
-
-// Load Complaint History
-
+// Complaint History
 
 function loadComplaints(){
-
-
 
 const history=
 document.getElementById(
@@ -159,9 +152,21 @@ document.getElementById(
 
 );
 
+const currentUser=
 
+JSON.parse(
 
-let complaints=JSON.parse(
+sessionStorage.getItem(
+
+"currentUser"
+
+)
+
+);
+
+let complaints=
+
+JSON.parse(
 
 localStorage.getItem(
 
@@ -171,9 +176,15 @@ localStorage.getItem(
 
 )||[];
 
+complaints = complaints.filter(
 
+c=>
 
+currentUser &&
 
+c.student===currentUser.name
+
+);
 
 if(
 
@@ -195,23 +206,13 @@ return;
 
 }
 
-
-
-
 history.innerHTML="";
-
-
-
-
 
 complaints.forEach(c=>{
 
-
 history.innerHTML+=`
 
-
 <div class="complaint">
-
 
 <h3>
 
@@ -219,15 +220,11 @@ ${c.title}
 
 </h3>
 
-
-
 <p>
 
 📂 ${c.category}
 
 </p>
-
-
 
 <p>
 
@@ -235,15 +232,11 @@ ${c.title}
 
 </p>
 
-
-
 <p>
 
 📝 ${c.description}
 
 </p>
-
-
 
 <p>
 
@@ -251,27 +244,22 @@ ${c.title}
 
 </p>
 
+<p>
 
+👤 ${c.student}
 
-<span class="badge pending">
+</p>
 
+<span class="badge">
 
 ${c.status}
 
-
 </span>
-
-
 
 </div>
 
-
 `;
 
-
-
 });
-
-
 
 }
