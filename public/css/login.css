@@ -369,58 +369,64 @@ text-decoration:none;
 
 
 
-@media(max-width:900px){
-
-.container{
-
-flex-direction:column;
-
-}
-
-
-.left{
-
-padding:40px;
-
-}
-
-
-.right{
-
-padding:30px;
-
-}
-
-}
-
 @media (max-width: 768px) {
 
-    .sidebar {
-        width: 100%;
-        position: relative;
-        min-height: auto;
-    }
+body{
+    padding:15px;
+    display:block;
+}
 
-    .main {
-        margin-left: 0;
-        padding: 15px;
-    }
+.container{
+    width:100%;
+    display:block;
+    border-radius:15px;
+}
 
-    .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
+.left{
+    padding:25px;
+}
 
-    .card {
-        width: 100%;
-    }
+.logo{
+    font-size:28px;
+}
 
-    button,
-    input,
-    select,
-    textarea {
-        width: 100%;
-        font-size: 16px;
-    }
+.left h1{
+    font-size:30px;
+}
+
+.left p{
+    font-size:16px;
+}
+
+.saved h2{
+    font-size:30px;
+}
+
+.right{
+    padding:20px;
+}
+
+.card{
+    max-width:100%;
+    padding:25px;
+}
+
+.card h2{
+    font-size:28px;
+}
+
+input,
+button{
+    font-size:18px;
+    padding:16px;
+}
+
+.remember{
+    font-size:16px;
+}
+
+.register{
+    font-size:16px;
+}
+
 }
