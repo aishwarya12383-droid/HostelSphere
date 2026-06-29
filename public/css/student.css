@@ -268,3 +268,50 @@ body{display:block !important;}
 .buttons{grid-template-columns:1fr !important;}
 .buttons button{font-size:18px !important;}
 }
+
+
+@media screen and (max-width:768px){
+
+body{
+display:block !important;
+}
+
+.sidebar{
+width:100% !important;
+height:auto !important;
+position:relative !important;
+}
+
+.sidebar ul{
+display:flex !important;
+overflow-x:auto !important;
+gap:10px;
+}
+
+.sidebar li{
+min-width:110px;
+text-align:center;
+}
+
+.main{
+width:100% !important;
+padding:15px !important;
+}
+
+.cards{
+display:grid !important;
+grid-template-columns:1fr !important;
+}
+
+.buttons{
+display:grid !important;
+grid-template-columns:1fr !important;
+}
+
+.card,
+.actions,
+.recent{
+width:100% !important;
+}
+
+}
