@@ -314,67 +314,64 @@ text-decoration:underline;
 
 
 
-@media(max-width:900px){
+@media (max-width:768px){
 
+body{
+    padding:15px;
+}
 
 .container{
-
-
-flex-direction:column;
-
-
+    flex-direction:column;
+    width:100%;
 }
-
-
 
 .left{
-
-
-padding:40px;
-
-
+    padding:25px;
 }
 
+.logo{
+    font-size:28px;
+}
 
+.left h1{
+    font-size:30px;
+}
+
+.left p{
+    font-size:16px;
+}
+
+.features{
+    gap:15px;
+}
+
+.feature{
+    padding:15px;
+}
 
 .right{
-
-
-padding:30px;
-
-
+    padding:20px;
 }
 
-
+.card{
+    max-width:100%;
+    padding:25px;
 }
-@media (max-width: 768px) {
 
-    .sidebar {
-        width: 100%;
-        position: relative;
-        min-height: auto;
-    }
+.card h2{
+    font-size:28px;
+}
 
-    .main {
-        margin-left: 0;
-        padding: 15px;
-    }
+input,
+select,
+button{
+    width:100%;
+    font-size:17px;
+    padding:15px;
+}
 
-    .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
+.login{
+    font-size:16px;
+}
 
-    .card {
-        width: 100%;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-        width: 100%;
-        font-size: 16px;
-    }
 }
