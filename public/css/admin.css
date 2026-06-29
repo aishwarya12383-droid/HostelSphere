@@ -189,141 +189,72 @@ border-radius:10px;
 margin-bottom:10px;
 }
 
-@media(max-width:768px){
+@media screen and (max-width:768px){
 
 body{
-flex-direction:column;
+    display:block;
 }
 
 .sidebar{
-width:100%;
-padding:20px;
+    width:100%;
+    position:relative;
+    padding:15px;
+}
+
+.sidebar h2{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.sidebar ul{
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+}
+
+.sidebar li{
+    white-space:nowrap;
+    margin:0;
+    padding:12px 18px;
 }
 
 .main{
-padding:20px;
-}
-
-.cards{
-grid-template-columns:1fr;
+    margin:0;
+    padding:15px;
 }
 
 .topbar{
-flex-direction:column;
-align-items:flex-start;
-gap:10px;
-}
-
-}
-/* Menu Management */
-
-.recent textarea{
-    width:100%;
-    min-height:80px;
-    margin:10px 0 20px;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#1F2937;
-    color:white;
-    resize:vertical;
-    font-size:15px;
-}
-
-.recent label{
     display:block;
-    margin-top:10px;
-    margin-bottom:6px;
-    color:#E5E7EB;
-    font-weight:600;
 }
 
-.recent button{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#6C63FF;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-    transition:.3s;
+.topbar h1{
+    font-size:26px;
 }
 
-.recent button:hover{
-    background:#5548e5;
+.cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
 }
+
 .card{
-    background: linear-gradient(135deg,#2563EB,#1E40AF);
-    color:white;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:0 12px 25px rgba(0,0,0,.15);
-    transition:.3s;
+    width:100%;
 }
 
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 20px 35px rgba(0,0,0,.25);
+.recent{
+    width:100%;
 }
 
-.card h1{
-    font-size:38px;
-    margin-top:10px;
-}
-
-.card h3{
-    font-size:18px;
-    opacity:.9;
-}
-
+textarea,
+input,
+select,
 button{
-    background:#2563EB;
-    color:white;
-    border:none;
-    border-radius:10px;
-    padding:12px 20px;
-    cursor:pointer;
-    transition:.3s;
-    font-weight:bold;
+    width:100%;
 }
 
-button:hover{
-    background:#1D4ED8;
-    transform:scale(1.05);
+img{
+    max-width:100%;
+    height:auto;
 }
-.sidebar {
-    background: #0F172A;
-    color: white;
-}
-@media (max-width: 768px) {
 
-    .sidebar {
-        width: 100%;
-        position: relative;
-        min-height: auto;
-    }
-
-    .main {
-        margin-left: 0;
-        padding: 15px;
-    }
-
-    .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .card {
-        width: 100%;
-    }
-
-    button,
-    input,
-    select,
-    textarea {
-        width: 100%;
-        font-size: 16px;
-    }
 }
