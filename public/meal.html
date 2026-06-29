@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>HostelSphere | Meal Booking</title>
+
+<link rel="stylesheet"
+href="css/meal.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<div class="container">
+
+
+
+<div class="header">
+
+
+<h1>
+
+🍽️ Meal Booking
+
+</h1>
+
+
+<p>
+
+Book meals and help reduce food waste
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+<div class="stats">
+
+
+
+<div class="stat-card">
+
+
+<h3>
+
+🌱 Food Saved
+
+</h3>
+
+
+
+<h2 id="saved">
+
+18 KG
+
+</h2>
+
+
+</div>
+
+
+
+
+
+<div class="stat-card">
+
+
+<h3>
+
+📅 Today's Date
+
+</h3>
+
+
+
+<h2 id="date">
+
+Loading...
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+<div class="stat-card">
+
+
+<h3>
+
+⏰ Dinner Closes In
+
+</h3>
+
+
+
+<h2 id="clock">
+
+00:00:00
+
+</h2>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="meal-section">
+
+
+
+
+<!-- Breakfast -->
+
+
+<div class="meal-card">
+
+    <h2>🥞 Breakfast</h2>
+
+    <div id="breakfastItems"></div>
+
+    <button onclick="bookMeal('Breakfast')">
+        Book Breakfast
+    </button>
+
+</div>
+
+
+
+
+
+<!-- Lunch -->
+
+<div class="meal-card">
+
+    <h2>🍚 Lunch</h2>
+
+    <div id="lunchItems"></div>
+
+    <button onclick="bookMeal('Lunch')">
+        Book Lunch
+    </button>
+
+</div>
+
+<!-- Dinner -->
+
+
+<div class="meal-card">
+
+    <h2>🥙 Dinner</h2>
+
+    <div id="dinnerItems"></div>
+
+    <button onclick="bookMeal('Dinner')">
+        Book Dinner
+    </button>
+
+</div>
+
+
+
+
+
+
+<div class="skip-card">
+
+
+<h2>
+
+🚫 Skip Meal
+
+</h2>
+
+
+
+<p>
+
+Going out today?
+
+
+Help us reduce food waste.
+
+</p>
+
+
+
+
+<button onclick="skipMeal()">
+
+Skip Today's Meal
+
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="history">
+
+
+<h2>
+
+📜 Meal History
+
+</h2>
+
+
+
+
+<div id="historyContainer">
+
+
+<p>
+
+No meals booked yet.
+
+</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+<script src="js/meal.js"></script>
+
+</body>
+
+</html>

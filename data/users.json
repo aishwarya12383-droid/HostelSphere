@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1782718020876,
+    "name": "Vidhya",
+    "email": "vidhya@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$dpCTS9H5QCruFDhRZwoozuD5.dfHs3GutNWkPrLpMc7.fXSnwFrMK",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782718055908,
+    "name": "aish",
+    "email": "aishu@gmail.com",
+    "phone": "9",
+    "password": "$2b$10$5UNnMBAlSK98SjiXfBBIzOiInb86kbWDe6iIYAM1G57iLW06Zp1F6",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782718861114,
+    "name": "vikashini",
+    "email": "vikas@gmail.com",
+    "phone": "888",
+    "password": "$2b$10$tGrh2ySaY/fqOjHeqf9PkudYgOOvNMxqSIUAFlYqMbNtSt1fNpTRy",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782718970510,
+    "name": "vikashini",
+    "email": "vikash@gmail.com",
+    "phone": "888",
+    "password": "$2b$10$TJZK.eZqpTMdfj4MRoltce/BT9U6.Qih/aoKSZw8G2om6nlnt8rTy",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782719078347,
+    "name": "vikashini",
+    "email": "vikashi@gmail.com",
+    "phone": "888",
+    "password": "$2b$10$kr3Tq6VhwqsA5SFAJdc4QOMtzP8AgwjTNTPL3.I0I2tHvY3bKiyYu",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782719214931,
+    "name": "vikashini",
+    "email": "vikashin@gmail.com",
+    "phone": "000",
+    "password": "$2b$10$N2Ga28wI8pfNz/nPQiYOOedRxQW2o/GtxdBI870UJSQE2nY3DgEsS",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782719577128,
+    "name": "vikashini",
+    "email": "v@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$3eeMHbfPiCcpLinQRrgCOuZM8MZ7KvQf4E1xjv/Cq.36YxECCUM.6",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782719646948,
+    "name": "Aishwarya",
+    "email": "ais@gmail.com",
+    "phone": "000",
+    "password": "$2b$10$zSoAiVraGbfdcro2lw5Pl.WXmpSvnWTh51kIsYsMuxjJf/iBJHbIW",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782719927922,
+    "name": "gopi",
+    "email": "gopi@gmail.com",
+    "phone": "9",
+    "password": "$2b$10$RTl.bhS5JdVoe6Q/V/HPmuQ4grhUWbyJNlpRYQddnTH2pjXMkY7sS",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782720110450,
+    "name": "Aishwarya",
+    "email": "newstudent123@gmail.com",
+    "phone": "9999999999",
+    "password": "$2b$10$lgYY.i7Vw3Hz2iBymuzNk./K0e6JewSpMD51lfznnaaJcXHGkoDie",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782720157600,
+    "name": "Aishwarya",
+    "email": "a@gmail.com",
+    "phone": "1",
+    "password": "$2b$10$nEUjM.8CQQs4FO/LtcgD/ekFaIXJM.NrsqPnaDb8RU47QHn6Ysp92",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782720268353,
+    "name": "Aishwarya",
+    "email": "ai@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$bg2ER2twCIGOlS0lKfbNeu.IfDhAxzJMHU9.QUfi65nyj4dhmaQ2q",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782721669592,
+    "name": "Aishwarya",
+    "email": "aisu@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$KxiUOhLi8vMUZy6jCNKKQ.subbXfQzO0d9RrmjRGL6C6JTbArtp2i",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782721847948,
+    "name": "Vijay",
+    "email": "vijay@gmail.com",
+    "phone": "9",
+    "password": "$2b$10$eWqp.SaECz33DNJwIBbmjO4gQ3K6mrS5RnFcNcAXTq7YzuMR.dswW",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782722115403,
+    "name": "vijay",
+    "email": "vij@gmail.com",
+    "phone": "8",
+    "password": "$2b$10$rw8j4gP6BDf28UXjRFKJmeaEBdfyJR1VhY.abIW.F1CrHXFEYxI8O",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782722300030,
+    "name": "lak",
+    "email": "l@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$JJ.eozArAh1BgIFY/mtMY.Z0.sWSObSiDN6zPFO5cj2bh/TEKhL3q",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782725523985,
+    "name": "n",
+    "email": "n@gmail.com",
+    "phone": "9",
+    "password": "$2b$10$oquKHCQxl.kzf84ury.MFufrHf.dDjOWONGF3HRiTkfLXywUIRHb2",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782725598794,
+    "name": "k",
+    "email": "k@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$Ne.lw/L2Y3A6wyFGnpdzGecnDoAVyCmK1RfG2goScwA7BmYK.u/pG",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  },
+  {
+    "id": 1782725678950,
+    "name": "g",
+    "email": "g@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$A23Qg8rDZqqMVQD9J8X/zuP..Tb0cwlSoNRe7eE5a1EYZawNyvAv.",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
+  }
+]

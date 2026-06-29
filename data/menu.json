@@ -1,0 +1,20 @@
+{
+  "breakfast": [
+    "Idli",
+    "  Dosa",
+    "  Pongal",
+    "  Poori"
+  ],
+  "lunch": [
+    "Rice",
+    "  Sambar",
+    "  Poriyal",
+    "  Curd"
+  ],
+  "dinner": [
+    "Chapati",
+    "  Kurma",
+    "  Milk",
+    "  Dosa"
+  ]
+}
