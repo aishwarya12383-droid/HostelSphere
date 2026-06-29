@@ -170,10 +170,13 @@ border-radius:10px;
 
 /* Mobile */
 
-@media(max-width:768px){
+/* Mobile */
+
+@media (max-width:768px){
 
 body{
 display:block;
+overflow:auto;
 }
 
 .sidebar{
@@ -182,52 +185,61 @@ padding:15px;
 }
 
 .sidebar h2{
-font-size:24px;
+font-size:28px;
 }
 
 .sidebar ul{
 display:flex;
 overflow-x:auto;
 gap:10px;
+padding-bottom:5px;
 }
 
 .sidebar li{
 white-space:nowrap;
+padding:14px 18px;
+font-size:18px;
 margin:0;
-padding:12px 16px;
 }
 
 .main{
-padding:15px;
+padding:20px;
 }
 
 .welcome h1{
-font-size:26px;
+font-size:36px;
+margin-bottom:10px;
 }
 
 .welcome p{
-font-size:16px;
+font-size:20px;
 }
 
 .cards{
+display:grid;
 grid-template-columns:1fr;
-gap:15px;
+gap:18px;
 }
 
 .card{
-padding:20px;
-}
-
-.card h1{
-font-size:28px;
+padding:25px;
 }
 
 .card h3{
-font-size:18px;
+font-size:22px;
+}
+
+.card h1{
+font-size:38px;
 }
 
 .actions{
-padding:20px;
+padding:25px;
+}
+
+.actions h2,
+.recent h2{
+font-size:28px;
 }
 
 .buttons{
@@ -236,16 +248,18 @@ grid-template-columns:1fr;
 
 .buttons button{
 width:100%;
-font-size:17px;
-padding:15px;
+padding:18px;
+font-size:18px;
 }
 
 .recent{
-padding:20px;
+padding:25px;
 }
 
 .recent p{
-font-size:16px;
+font-size:18px;
+line-height:1.8;
+padding:16px;
 }
 
 }
