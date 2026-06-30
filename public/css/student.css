@@ -90,10 +90,11 @@ margin-right:12px;
 /* Main */
 
 .main{
-flex:1;
-padding:35px;
-overflow-y:auto;
-width:100%;
+margin-left:260px;
+padding:90px 35px 35px;
+width:calc(100% - 260px);
+min-height:100vh;
+transition:.3s;
 }
 
 /* Top Bar */
@@ -226,15 +227,16 @@ display:block;
 }
 
 .sidebar{
-position:fixed;
-left:-270px;
-top:0;
 width:260px;
-height:100%;
+height:100vh;
+position:fixed;
+left: -260px;
+top:0;
 background:#111827;
+padding:30px;
 transition:0.3s;
-z-index:999;
-padding-top:80px;
+z-index:1000;
+overflow-y:auto;
 }
 
 .sidebar.active{

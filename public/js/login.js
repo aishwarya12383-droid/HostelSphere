@@ -117,3 +117,7 @@ function adminLogin() {
     }
 
 }
+
+function forgotPassword() {
+    alert("Password reset is not available in this version.\n\nPlease contact the hostel administrator to reset your password.");
+}
