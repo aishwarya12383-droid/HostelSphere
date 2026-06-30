@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HostelSphere | Admin Notices</title>
+
+<link rel="stylesheet" href="css/admin-notices.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>📢 Notice Management</h1>
+
+<input
+id="title"
+type="text"
+placeholder="Notice Title">
+
+<textarea
+id="message"
+placeholder="Notice Message"></textarea>
+
+<button onclick="publishNotice()">
+
+Publish Notice
+
+</button>
+
+<h2>Published Notices</h2>
+
+<div id="noticeList">
+
+</div>
+
+</div>
+
+<script src="js/admin-notices.js"></script>
+
+</body>
+
+</html>
