@@ -212,10 +212,10 @@ app.get("/students", (req, res) => {
 
 });
 
+// ================= COMPLAINTS =================
+
 // Submit Complaint
 app.post("/complaints", (req, res) => {
-
-    const { student, title, category, priority, description } = req.body;
 
     try {
 
@@ -223,11 +223,11 @@ app.post("/complaints", (req, res) => {
 
         const complaint = {
             id: Date.now(),
-            student,
-            title,
-            category,
-            priority,
-            description,
+            student: req.body.student,
+            title: req.body.title,
+            category: req.body.category,
+            priority: req.body.priority,
+            description: req.body.description,
             status: "Pending",
             date: new Date().toLocaleString()
         };
@@ -244,9 +244,70 @@ app.post("/complaints", (req, res) => {
             message: "Complaint Submitted Successfully"
         });
 
-    } catch (error) {
+    } catch (err) {
 
-        console.log(error);
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
+
+// Get All Complaints
+app.get("/complaints", (req, res) => {
+
+    try {
+
+        const complaints = JSON.parse(fs.readFileSync(complaintsFile));
+
+        res.json(complaints);
+
+    } catch (err) {
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
+
+// Update Complaint Status
+app.put("/complaints/:id", (req, res) => {
+
+    try {
+
+        const complaints = JSON.parse(fs.readFileSync(complaintsFile));
+
+        const complaint = complaints.find(
+            c => c.id == req.params.id
+        );
+
+        if (!complaint) {
+
+            return res.status(404).json({
+                success: false,
+                message: "Complaint Not Found"
+            });
+
+        }
+
+        complaint.status = req.body.status;
+
+        fs.writeFileSync(
+            complaintsFile,
+            JSON.stringify(complaints, null, 2)
+        );
+
+        res.json({
+            success: true,
+            message: "Status Updated"
+        });
+
+    } catch (err) {
 
         res.status(500).json({
             success: false,

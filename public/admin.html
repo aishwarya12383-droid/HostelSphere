@@ -1,8 +1,10 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HostelSphere | Admin Dashboard</title>
 
@@ -10,217 +12,119 @@
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 <body>
 
-<div class="sidebar">
+<!-- Top Navigation -->
 
-<h2>
+<div class="topbar">
 
-🏠 HostelSphere
+<button id="menuBtn">
+<i class="fa-solid fa-bars"></i>
+</button>
 
-</h2>
+<div>
+<h1>👨🏻‍💼 Admin Dashboard</h1>
+<p id="currentDate"></p>
+</div>
+
+</div>
+
+<!-- Sidebar -->
+
+<div class="sidebar" id="sidebar">
+
+<h2>🏠 HostelSphere</h2>
 
 <ul>
 
-<li class="active"
-onclick="window.location.href='admin.html'">
-
+<li class="active" onclick="window.location.href='admin.html'">
 <i class="fa-solid fa-house"></i>
-
 Dashboard
-
 </li>
 
 <li onclick="window.location.href='students.html'">
-
 <i class="fa-solid fa-users"></i>
-
 Students
-
 </li>
 
 <li onclick="window.location.href='analytics.html'">
-
 <i class="fa-solid fa-chart-simple"></i>
-
 Analytics
-
 </li>
 
 <li onclick="logout()">
-
 <i class="fa-solid fa-right-from-bracket"></i>
-
 Logout
-
 </li>
 
 </ul>
 
 </div>
 
+<!-- Main -->
+
 <div class="main">
-
-<div class="topbar">
-
-<div>
-
-<h1>👨🏻‍💼 Admin Dashboard</h1>
-
-<p id="currentDate"></p>
-
-</div>
-
-</div>
 
 <div class="cards">
 
 <div class="card">
-
-<h3>
-
-👨🏻‍🎓 Students
-
-</h3>
-
-<h1 id="students">
-
-0
-
-</h1>
-
+<h3>👨🏻‍🎓 Students</h3>
+<h1 id="students">0</h1>
 </div>
 
 <div class="card">
-
-<h3>
-
-🍽 Meal Bookings
-
-</h3>
-
-<h1 id="meals">
-
-0
-
-</h1>
-
+<h3>🍽 Meal Bookings</h3>
+<h1 id="meals">0</h1>
 </div>
 
 <div class="card">
-
-<h3>
-
-📩 Complaints
-
-</h3>
-
-<h1 id="complaints">
-
-0
-
-</h1>
-
+<h3>📩 Complaints</h3>
+<h1 id="complaints">0</h1>
 </div>
 
 <div class="card">
-
-<h3>
-
-🌱 Food Saved
-
-</h3>
-
-<h1 id="saved">
-
-0 KG
-
-</h1>
-
+<h3>🌱 Food Saved</h3>
+<h1 id="saved">0 KG</h1>
 </div>
 
 </div>
+
+<!-- Meal Statistics -->
 
 <div class="recent">
 
-<h2>
+<h2>🍽 Today's Meal Bookings</h2>
 
-🍽 Today's Meal Bookings
+<p>Breakfast : <span id="breakfastCount">0</span> Students</p>
 
-</h2>
+<p>Lunch : <span id="lunchCount">0</span> Students</p>
 
-<p>
-
-Breakfast : <span id="breakfastCount">
-
-0
-
-</span>
-
-Students
-
-</p>
-
-<p>
-
-Lunch : <span id="lunchCount">
-
-0
-
-</span>
-
-Students
-
-</p>
-
-<p>
-
-Dinner : <span id="dinnerCount">
-
-0
-
-</span>
-
-Students
-
-</p>
+<p>Dinner : <span id="dinnerCount">0</span> Students</p>
 
 </div>
 
+<!-- Complaints -->
+
 <div class="recent">
 
-<h2>
-
-📩 Student Complaints
-
-</h2>
+<h2>📩 Student Complaints</h2>
 
 <div id="complaintList">
 
-<p>
-
-No complaints submitted.
-
-</p>
+<p>No complaints submitted.</p>
 
 </div>
 
 </div>
 
-</div>
+<!-- Notices -->
 
 <div class="recent">
 
-<h2>
-
-📢 Recent Notices
-
-</h2>
+<h2>📢 Recent Notices</h2>
 
 <div id="noticeList">
 
@@ -229,29 +133,50 @@ No complaints submitted.
 </div>
 
 </div>
-<div class="recent">
 
-    <h2>🍽 Menu Management</h2>
+<!-- Menu Management -->
 
-    <label>Breakfast</label>
-    <textarea id="breakfastMenu" rows="3"
-    placeholder="Idli, Dosa, Pongal, Poori"></textarea>
+<div class="menu-section">
 
-    <label>Lunch</label>
-    <textarea id="lunchMenu" rows="3"
-    placeholder="Rice, Sambar, Poriyal, Curd"></textarea>
+<h2>🍽 Menu Management</h2>
 
-    <label>Dinner</label>
-    <textarea id="dinnerMenu" rows="3"
-    placeholder="Chapati, Kurma, Milk, Dosa"></textarea>
+<div class="menu-group">
 
-    <br><br>
+<label>Breakfast</label>
 
-    <button onclick="updateMenu()">
-        Update Menu
-    </button>
+<textarea id="breakfastMenu"
+placeholder="Idli, Dosa, Pongal, Poori"></textarea>
 
 </div>
+
+<div class="menu-group">
+
+<label>Lunch</label>
+
+<textarea id="lunchMenu"
+placeholder="Rice, Sambar, Poriyal, Curd"></textarea>
+
+</div>
+
+<div class="menu-group">
+
+<label>Dinner</label>
+
+<textarea id="dinnerMenu"
+placeholder="Chapati, Kurma, Milk, Dosa"></textarea>
+
+</div>
+
+<button onclick="updateMenu()">
+
+Update Menu
+
+</button>
+
+</div>
+
+</div>
+
 <script src="js/admin.js"></script>
 
 </body>

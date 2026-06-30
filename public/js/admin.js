@@ -29,6 +29,69 @@ async function loadDashboard() {
 
 loadDashboard();
 
+async function loadComplaints() {
+
+    try {
+
+        const response = await fetch("https://hostelsphere-backend.onrender.com/complaints");
+
+        complaints = await response.json();
+
+        const complaintList = document.getElementById("complaintList");
+
+        complaintList.innerHTML = "";
+
+        if (complaints.length === 0) {
+
+            complaintList.innerHTML = "<p>No complaints submitted.</p>";
+            return;
+
+        }
+
+        complaints.forEach((c, index) => {
+
+            complaintList.innerHTML += `
+
+            <div class="complaintCard">
+
+                <h3>👤 ${c.student}</h3>
+
+                <p><b>Title:</b> ${c.title}</p>
+
+                <p><b>Description:</b> ${c.description}</p>
+
+                <p><b>Priority:</b> ${c.priority}</p>
+
+                <p><b>Status:</b>
+
+                <select onchange="updateStatus(${index},this.value)">
+
+                    <option value="Pending" ${c.status=="Pending"?"selected":""}>Pending</option>
+
+                    <option value="In Progress" ${c.status=="In Progress"?"selected":""}>In Progress</option>
+
+                    <option value="Resolved" ${c.status=="Resolved"?"selected":""}>Resolved</option>
+
+                </select>
+
+                </p>
+
+            </div>
+
+            `;
+
+        });
+
+    } catch (err) {
+
+        console.log(err);
+
+    }
+
+}
+
+loadComplaints();
+
 
 
 let breakfast = 0;
@@ -154,18 +217,32 @@ noticeList.innerHTML += `
 }
 
 }
+async function updateStatus(index, status) {
 
-function updateStatus(index,status){
+    try {
 
-complaints[index].status = status;
+        const response = await fetch(
+            `https://hostelsphere-backend.onrender.com/complaints/${complaints[index].id}`,
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ status })
+            }
+        );
 
-localStorage.setItem(
+        const data = await response.json();
 
-"complaints",
+        alert(data.message);
 
-JSON.stringify(complaints)
+    } catch (error) {
 
-);
+        console.log(error);
+
+        alert("Failed to update complaint status");
+
+    }
 
 }
 

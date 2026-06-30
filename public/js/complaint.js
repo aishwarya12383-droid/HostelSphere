@@ -1,7 +1,9 @@
-// Load complaints
+// ================= Load Complaint History =================
+
 loadComplaints();
 
-// Submit Complaint
+// ================= Submit Complaint =================
+
 async function submitComplaint() {
 
     const user = JSON.parse(sessionStorage.getItem("currentUser"));
@@ -12,10 +14,10 @@ async function submitComplaint() {
         return;
     }
 
-    const title = document.getElementById("title").value;
+    const title = document.getElementById("title").value.trim();
     const category = document.getElementById("category").value;
     const priority = document.getElementById("priority").value;
-    const description = document.getElementById("description").value;
+    const description = document.getElementById("description").value.trim();
 
     if (!title || !description) {
         alert("Please fill all required fields.");
@@ -48,19 +50,10 @@ async function submitComplaint() {
 
             alert("Complaint Submitted Successfully ✅");
 
-            const history = document.getElementById("history");
-
-            history.innerHTML += `
-                <div class="complaint-card">
-                    <h3>${title}</h3>
-                    <p><b>Category:</b> ${category}</p>
-                    <p><b>Priority:</b> ${priority}</p>
-                    <p><b>Status:</b> Pending</p>
-                </div>
-            `;
-
             document.getElementById("title").value = "";
             document.getElementById("description").value = "";
+
+            loadComplaints();
 
         } else {
 
@@ -70,132 +63,100 @@ async function submitComplaint() {
 
     } catch (error) {
 
-        console.error(error);
+        console.log(error);
         alert("Server Error");
 
     }
 
 }
 
-// Complaint History
+// ================= Load Complaints =================
 
-function loadComplaints(){
+async function loadComplaints() {
 
-const history=
-document.getElementById(
+    const history = document.getElementById("history");
 
-"history"
+    const currentUser = JSON.parse(
+        sessionStorage.getItem("currentUser")
+    );
 
-);
+    try {
 
-const currentUser=
+        const response = await fetch(
+            "https://hostelsphere-backend.onrender.com/complaints"
+        );
 
-JSON.parse(
+        let complaints = await response.json();
 
-sessionStorage.getItem(
+        complaints = complaints.filter(c =>
+            currentUser &&
+            c.student === currentUser.name
+        );
 
-"currentUser"
+        if (complaints.length === 0) {
 
-)
+            history.innerHTML = `
+                <p>No complaints submitted.</p>
+            `;
 
-);
+            return;
 
-let complaints=
+        }
 
-JSON.parse(
+        history.innerHTML = "";
 
-localStorage.getItem(
+        complaints.forEach(c => {
 
-"complaints"
+            let badgeColor = "#facc15";
 
-)
+            if (c.status === "Resolved") {
+                badgeColor = "#22c55e";
+            }
 
-)||[];
+            if (c.status === "In Progress") {
+                badgeColor = "#3b82f6";
+            }
 
-complaints = complaints.filter(
+            history.innerHTML += `
 
-c=>
+            <div class="complaint">
 
-currentUser &&
+                <h3>${c.title}</h3>
 
-c.student===currentUser.name
+                <p>📂 <b>Category:</b> ${c.category}</p>
 
-);
+                <p>⚠️ <b>Priority:</b> ${c.priority}</p>
 
-if(
+                <p>📝 <b>Description:</b> ${c.description}</p>
 
-complaints.length===0
+                <p>🕒 <b>Date:</b> ${c.date}</p>
 
-){
+                <p style="margin-top:10px;">
+                    <span style="
+                        background:${badgeColor};
+                        color:white;
+                        padding:6px 14px;
+                        border-radius:20px;
+                        font-weight:bold;
+                    ">
+                        ${c.status}
+                    </span>
+                </p>
 
-history.innerHTML=`
+            </div>
 
-<p>
+            `;
 
-No complaints submitted.
+        });
 
-</p>
+    } catch (error) {
 
-`;
+        console.log(error);
 
-return;
+        history.innerHTML = `
+            <p>Unable to load complaints.</p>
+        `;
 
-}
-
-history.innerHTML="";
-
-complaints.forEach(c=>{
-
-history.innerHTML+=`
-
-<div class="complaint">
-
-<h3>
-
-${c.title}
-
-</h3>
-
-<p>
-
-📂 ${c.category}
-
-</p>
-
-<p>
-
-⚠️ ${c.priority}
-
-</p>
-
-<p>
-
-📝 ${c.description}
-
-</p>
-
-<p>
-
-🕒 ${c.date}
-
-</p>
-
-<p>
-
-👤 ${c.student}
-
-</p>
-
-<span class="badge">
-
-${c.status}
-
-</span>
-
-</div>
-
-`;
-
-});
+    }
 
 }
