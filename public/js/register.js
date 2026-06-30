@@ -42,8 +42,7 @@ if (data.success) {
 
      console.log("About to redirect...");
 
-window.location.replace("http://localhost:5000/login.html");
-
+window.location.replace("login.html");
 return;
 }
  else {
