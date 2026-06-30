@@ -188,5 +188,15 @@
     "department": "ECE",
     "year": "I Year",
     "role": "student"
+  },
+  {
+    "id": 1782802001742,
+    "name": "p",
+    "email": "p@gmail.com",
+    "phone": "0",
+    "password": "$2b$10$RRgQHu34uIOgArvqQoTXnuPm9cZD1pvgNFNmgfKBYTpwK/Brc0ZKa",
+    "department": "ECE",
+    "year": "I Year",
+    "role": "student"
   }
 ]

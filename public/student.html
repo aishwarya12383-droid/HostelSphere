@@ -1,378 +1,197 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>HostelSphere | Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/student.css">
+    <title>HostelSphere | Dashboard</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/student.css">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body>
 
-<div class="topbar">
+    <!-- Top Navigation -->
+    <div class="topbar">
 
-    <button id="menuBtn">
-        <i class="fa-solid fa-bars"></i>
-    </button>
+        <button id="menuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
 
-    <h2>HostelSphere</h2>
+        <h2>🏠 HostelSphere</h2>
 
-</div>
-<div class="sidebar" id="sidebar"></div>
+    </div>
 
+    <!-- Sidebar -->
 
-<h2>
+    <div class="sidebar" id="sidebar">
 
-🏠 HostelSphere
+        <h2>🏠 HostelSphere</h2>
 
-</h2>
+        <ul>
 
+            <li class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
 
+            <li onclick="window.location.href='meal.html'">
+                <i class="fa-solid fa-utensils"></i>
+                Meals
+            </li>
 
+            <li onclick="window.location.href='complaint.html'">
+                <i class="fa-solid fa-envelope"></i>
+                Complaints
+            </li>
 
-<ul>
+            <li onclick="window.location.href='notice.html'">
+                <i class="fa-solid fa-bullhorn"></i>
+                Notices
+            </li>
 
+            <li onclick="window.location.href='visitors.html'">
+                <i class="fa-solid fa-users"></i>
+                Visitors
+            </li>
 
-<li class="active">
+            <li onclick="window.location.href='profile.html'">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </li>
 
-<i class="fa-solid fa-house"></i>
+            <li onclick="logout()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </li>
 
-Dashboard
+        </ul>
 
-</li>
+    </div>
 
+    <!-- Main Content -->
 
+    <div class="main">
 
-<li onclick="window.location.href='meal.html'">
+        <div class="welcome">
 
-<i class="fa-solid fa-utensils"></i>
+            <h1 id="welcomeUser">
+                Welcome Back 👋
+            </h1>
 
-Meals
+            <p>
+                HostelSphere Smart Dashboard
+            </p>
 
-</li>
+        </div>
 
+        <!-- Dashboard Cards -->
 
+        <div class="cards">
 
+            <div class="card">
 
-<li onclick="window.location.href='complaint.html'">
+                <h3>🌱 Food Saved</h3>
 
-<i class="fa-solid fa-envelope"></i>
+                <h1>18 KG</h1>
 
-Complaints
+            </div>
 
-</li>
+            <div class="card">
 
+                <h3>🍽 Today's Meal</h3>
 
+                <h1>Booked</h1>
 
+            </div>
 
-<li onclick="window.location.href='notice.html'">
+            <div class="card">
 
-<i class="fa-solid fa-bullhorn"></i>
+                <h3>📩 Complaints</h3>
 
-Notices
+                <h1>2</h1>
 
-</li>
+            </div>
 
+            <div class="card">
 
+                <h3>👥 Visitors</h3>
 
+                <h1>3</h1>
 
-<li onclick="window.location.href='visitors.html'">
+            </div>
 
-<i class="fa-solid fa-users"></i>
+        </div>
 
-Visitors
+        <!-- Quick Actions -->
 
-</li>
+        <div class="section">
 
+            <h2>Quick Actions</h2>
 
+            <div class="buttons">
 
-<li onclick="window.location.href='profile.html'">
+                <button onclick="window.location.href='meal.html'">
+                    🍽 Book Meal
+                </button>
 
-<i class="fa-solid fa-user"></i>
+                <button onclick="window.location.href='complaint.html'">
+                    📩 Complaint
+                </button>
 
-Profile
+                <button onclick="window.location.href='notice.html'">
+                    📢 View Notices
+                </button>
 
-</li>
+                <button onclick="window.location.href='visitors.html'">
+                    👥 Visitors
+                </button>
 
+            </div>
 
+        </div>
 
+        <!-- Recent Activities -->
 
-<li onclick="logout()">
+        <div class="section">
 
-<i class="fa-solid fa-right-from-bracket"></i>
+            <h2>Recent Activities</h2>
 
-Logout
+            <div class="notice">
 
-</li>
+                <h3>🍽 Breakfast Booked</h3>
 
+                <p>Your breakfast has been booked successfully.</p>
 
+            </div>
 
-</ul>
+            <div class="notice">
 
+                <h3>📩 Complaint Submitted</h3>
 
+                <p>Your complaint has been sent to the hostel administrator.</p>
 
-</div>
+            </div>
 
+            <div class="notice">
 
+                <h3>👥 Visitor Request Approved</h3>
 
+                <p>Your visitor request has been approved.</p>
 
+            </div>
 
+        </div>
 
-<div class="main">
+    </div>
 
-
-
-<div class="welcome">
-
-
-
-<h1 id="welcomeUser">
-
-Welcome Back 👋
-
-</h1>
-
-<p>
-
-HostelSphere Smart Dashboard
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-
-<h3>
-
-🌱 Food Saved
-
-</h3>
-
-
-<h1>
-
-18 KG
-
-</h1>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-🍽 Today's Meal
-
-</h3>
-
-
-<h1>
-
-Booked
-
-</h1>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-📩 Complaints
-
-</h3>
-
-
-<h1>
-
-2
-
-</h1>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-🏆 👥 Visitors
-
-
-</h3>
-
-
-<h1>
-
-3
-
-</h1>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-<div class="actions">
-
-
-<h2>
-
-
-Quick Actions
-
-
-</h2>
-
-
-
-
-
-<div class="buttons">
-
-
-<button onclick="window.location.href='meal.html'">
-
-Book Meal
-
-</button>
-
-
-
-<button onclick="window.location.href='complaint.html'">
-
-Complaint
-
-</button>
-
-
-
-<button onclick="window.location.href='notice.html'">
-
-View Notices
-
-</button>
-
-
-
-<button onclick="window.location.href='visitors.html'">
-
-Visitors
-
-</button>
-
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-<div class="recent">
-
-
-<h2>
-
-Recent Activities
-
-</h2>
-
-
-
-<p>
-
-✅ Breakfast Booked
-
-
-</p>
-
-
-
-
-<p>
-
-📩 Complaint Submitted
-
-
-</p>
-
-
-
-
-<p>
-
-🏆👥 Visitor Request Approved
-
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
-<script src="js/student.js"></script>
+    <script src="js/student.js"></script>
 
 </body>
 

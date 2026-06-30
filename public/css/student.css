@@ -15,6 +15,35 @@ overflow-x:hidden;
 overflow-y:auto;
 }
 
+/* ================= Top Navigation ================= */
+
+.topbar{
+display:flex;
+align-items:center;
+gap:20px;
+padding:15px 25px;
+background:#111827;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+}
+
+.topbar h2{
+color:white;
+font-size:24px;
+}
+
+#menuBtn{
+background:none;
+border:none;
+color:white;
+font-size:28px;
+cursor:pointer;
+display:none;
+}
+
 /* Sidebar */
 
 .sidebar{
@@ -192,30 +221,9 @@ border-radius:10px;
 
 @media (max-width:768px){
 
-body{
+#menuBtn{
 display:block;
 }
-
-/* Top Bar */
-
-.topbar{
-display:flex;
-align-items:center;
-justify-content:flex-start;
-padding:15px;
-background:#111827;
-gap:15px;
-}
-
-#menuBtn{
-background:none;
-border:none;
-color:white;
-font-size:28px;
-cursor:pointer;
-}
-
-/* Sidebar */
 
 .sidebar{
 position:fixed;
@@ -224,52 +232,28 @@ top:0;
 width:260px;
 height:100%;
 background:#111827;
-transition:.3s;
+transition:0.3s;
 z-index:999;
-padding-top:70px;
+padding-top:80px;
 }
 
 .sidebar.active{
 left:0;
 }
 
-.sidebar ul{
-display:block;
-}
-
-.sidebar li{
-text-align:left;
-}
-
-/* Main */
-
 .main{
-padding:20px;
-margin-left:0;
+padding:90px 20px 20px;
 }
-
-/* Cards */
 
 .cards{
-display:grid;
 grid-template-columns:1fr;
-gap:20px;
+}
+
+.buttons{
+grid-template-columns:1fr;
 }
 
 .card{
 width:100%;
 }
-
-/* Buttons */
-
-.buttons{
-display:grid;
-grid-template-columns:1fr;
-gap:15px;
-}
-
-.buttons button{
-width:100%;
-}
-
 }
