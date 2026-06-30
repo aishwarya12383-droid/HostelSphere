@@ -16,6 +16,7 @@ const bookingsFile = path.join(__dirname, "data", "bookings.json");
 const complaintsFile = path.join(__dirname, "data", "complaints.json");
 const noticesFile = path.join(__dirname, "data", "notices.json");
 const menuFile = path.join(__dirname, "data", "menu.json");
+const visitorsFile = path.join(__dirname, "data", "visitors.json");
 
 // Home Route
 app.get("/", (req, res) => {
@@ -466,6 +467,105 @@ app.post("/menu", (req, res) => {
     }
 
 });
+
+// ================= VISITORS =================
+
+// Get All Visitors
+app.get("/visitors", (req, res) => {
+
+    try {
+
+        const visitors = JSON.parse(fs.readFileSync(visitorsFile));
+
+        res.json(visitors);
+
+    } catch (error) {
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
+
+// Submit Visitor Request
+app.post("/visitors", (req, res) => {
+
+    try {
+
+        const visitors = JSON.parse(fs.readFileSync(visitorsFile));
+
+        const visitor = {
+            id: Date.now(),
+            student: req.body.student,
+            name: req.body.name,
+            relation: req.body.relation,
+            date: req.body.date,
+            time: req.body.time,
+            purpose: req.body.purpose,
+            status: "Pending"
+        };
+
+        visitors.push(visitor);
+
+        fs.writeFileSync(visitorsFile, JSON.stringify(visitors, null, 2));
+
+        res.json({
+            success: true,
+            message: "Visitor Request Submitted"
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
+
+// Update Visitor Status
+app.put("/visitors/:id", (req, res) => {
+
+    try {
+
+        const visitors = JSON.parse(fs.readFileSync(visitorsFile));
+
+        const visitor = visitors.find(v => v.id == req.params.id);
+
+        if (!visitor) {
+
+            return res.status(404).json({
+                success: false,
+                message: "Visitor Not Found"
+            });
+
+        }
+
+        visitor.status = req.body.status;
+
+        fs.writeFileSync(visitorsFile, JSON.stringify(visitors, null, 2));
+
+        res.json({
+            success: true,
+            message: "Visitor Status Updated"
+        });
+
+    } catch (error) {
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
+
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

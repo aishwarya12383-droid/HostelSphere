@@ -1,81 +1,132 @@
 loadVisitors();
 
-function submitVisitor(){
+// ================= Submit Visitor =================
 
-const visitor={
-name:document.getElementById("visitorName").value,
-relation:document.getElementById("relation").value,
-date:document.getElementById("date").value,
-time:document.getElementById("time").value,
-purpose:document.getElementById("purpose").value,
-status:"Pending"
-};
+async function submitVisitor() {
 
-if(
-visitor.name===""||
-visitor.relation===""||
-visitor.date===""||
-visitor.time===""||
-visitor.purpose===""){
-alert("Please fill all fields");
-return;
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
+
+    if (!user) {
+        alert("Please login first");
+        window.location.href = "login.html";
+        return;
+    }
+
+    const visitor = {
+        student: user.name,
+        name: document.getElementById("visitorName").value,
+        relation: document.getElementById("relation").value,
+        date: document.getElementById("date").value,
+        time: document.getElementById("time").value,
+        purpose: document.getElementById("purpose").value
+    };
+
+    if (
+        visitor.name === "" ||
+        visitor.relation === "" ||
+        visitor.date === "" ||
+        visitor.time === "" ||
+        visitor.purpose === ""
+    ) {
+        alert("Please fill all fields");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("https://hostelsphere-backend.onrender.com/visitors", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify(visitor)
+
+        });
+
+        const data = await response.json();
+
+        alert(data.message);
+
+        document.getElementById("visitorName").value = "";
+        document.getElementById("relation").value = "";
+        document.getElementById("date").value = "";
+        document.getElementById("time").value = "";
+        document.getElementById("purpose").value = "";
+
+        loadVisitors();
+
+    } catch (error) {
+
+        console.log(error);
+        alert("Server Error");
+
+    }
+
 }
 
-let visitors=JSON.parse(localStorage.getItem("visitors"))||[];
+// ================= Load Visitors =================
 
-visitors.push(visitor);
+async function loadVisitors() {
 
-localStorage.setItem("visitors",JSON.stringify(visitors));
+    const container = document.getElementById("visitorList");
 
-alert("Visitor Request Submitted Successfully");
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
 
-document.getElementById("visitorName").value="";
-document.getElementById("relation").value="";
-document.getElementById("date").value="";
-document.getElementById("time").value="";
-document.getElementById("purpose").value="";
+    try {
 
-loadVisitors();
+        const response = await fetch("https://hostelsphere-backend.onrender.com/visitors");
 
-}
+        let visitors = await response.json();
 
-function loadVisitors(){
+        visitors = visitors.filter(v => user && v.student === user.name);
 
-const container=document.getElementById("visitorList");
+        if (visitors.length === 0) {
 
-const visitors=JSON.parse(localStorage.getItem("visitors"))||[];
+            container.innerHTML = "<p>No Visitor Requests Yet.</p>";
+            return;
 
-container.innerHTML="";
+        }
 
-if(visitors.length===0){
+        container.innerHTML = "";
 
-container.innerHTML="<p>No Visitor Requests Yet.</p>";
-return;
+        visitors.forEach(v => {
 
-}
+            let icon = "🟡";
 
-visitors.forEach(v=>{
+            if (v.status === "Approved") icon = "🟢";
+            if (v.status === "Rejected") icon = "🔴";
 
-container.innerHTML+=`
+            container.innerHTML += `
 
-<div class="request">
+            <div class="request">
 
-<h3>👤 ${v.name}</h3>
+                <h3>👤 ${v.name}</h3>
 
-<p><b>Relation:</b> ${v.relation}</p>
+                <p><b>Relation:</b> ${v.relation}</p>
 
-<p><b>Date:</b> ${v.date}</p>
+                <p><b>Date:</b> ${v.date}</p>
 
-<p><b>Time:</b> ${v.time}</p>
+                <p><b>Time:</b> ${v.time}</p>
 
-<p><b>Purpose:</b> ${v.purpose}</p>
+                <p><b>Purpose:</b> ${v.purpose}</p>
 
-<p><b>Status:</b> 🟡 ${v.status}</p>
+                <p><b>Status:</b> ${icon} ${v.status}</p>
 
-</div>
+            </div>
 
-`;
+            `;
 
-});
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        container.innerHTML = "<p>Unable to load visitors.</p>";
+
+    }
 
 }
