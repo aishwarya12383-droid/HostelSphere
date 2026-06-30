@@ -13,7 +13,7 @@ async function addNotice() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/notices", {
+        const response = await fetch("https://hostelsphere-backend.onrender.com/notices", {
 
             method: "POST",
 
@@ -66,7 +66,7 @@ async function loadNotice() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/notices");
+        const response = await fetch("https://hostelsphere-backend.onrender.com/notices");
 
         const notices = await response.json();
 

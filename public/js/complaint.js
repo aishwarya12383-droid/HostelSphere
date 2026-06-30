@@ -24,7 +24,7 @@ async function submitComplaint() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/complaints", {
+        const response = await fetch("https://hostelsphere-backend.onrender.com/complaints", {
 
             method: "POST",
 

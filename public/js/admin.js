@@ -7,7 +7,7 @@ async function loadDashboard() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/admin/dashboard");
+        const response = await fetch("https://hostelsphere-backend.onrender.com/admin/dashboard");
 
         const data = await response.json();
 
@@ -183,7 +183,7 @@ async function loadMenu() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/menu");
+        const response = await fetch("https://hostelsphere-backend.onrender.com/menu");
 
         const menu = await response.json();
 
@@ -221,7 +221,7 @@ async function updateMenu() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/menu", {
+        const response = await fetch("https://hostelsphere-backend.onrender.com/menu", {
 
             method: "POST",
 

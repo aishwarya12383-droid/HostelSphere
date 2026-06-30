@@ -1,8 +1,7 @@
 async function loadStudents() {
 
     try {
-
-        const response = await fetch("http://localhost:5000/students");
+const response = await fetch("https://hostelsphere-backend.onrender.com/students");
 
         const students = await response.json();
 

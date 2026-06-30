@@ -2,7 +2,7 @@ async function loadAnalytics() {
 
     try {
 
-        const response = await fetch("http://localhost:5000/analytics");
+        const response = await fetch("https://hostelsphere-backend.onrender.com/analytics");
 
         const data = await response.json();
 
