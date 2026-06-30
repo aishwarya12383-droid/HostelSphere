@@ -565,7 +565,50 @@ app.put("/visitors/:id", (req, res) => {
     }
 
 });
+// ================= FORGOT PASSWORD =================
 
+app.post("/forgot-password", async (req, res) => {
+
+    const { email, password } = req.body;
+
+    try {
+
+        const users = JSON.parse(fs.readFileSync(usersFile));
+
+        const user = users.find(u => u.email === email);
+
+        if (!user) {
+
+            return res.status(404).json({
+                success: false,
+                message: "Email not found"
+            });
+
+        }
+
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        user.password = hashedPassword;
+
+        fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+
+        res.json({
+            success: true,
+            message: "Password updated successfully"
+        });
+
+    } catch (error) {
+
+        console.log(error);
+
+        res.status(500).json({
+            success: false,
+            message: "Server Error"
+        });
+
+    }
+
+});
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
